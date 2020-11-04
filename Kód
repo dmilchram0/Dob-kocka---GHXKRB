@@ -1,0 +1,17 @@
+import numpy as np
+import cv2
+
+I = cv2.imread("#kép kockáról")
+
+detector = cv2.SimpleBlobDetector_create()
+
+foltok = detector.detect(I)
+
+print(len(foltok))
+
+imgKeyPoints = cv2.drawKeypoints(I, foltok, np.array([]), (0,0,255), cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+
+cv2.imshow("Foltok", imgKeyPoints)
+cv2.waitKey(0)
+
+cv2.destroyAllWindows()
