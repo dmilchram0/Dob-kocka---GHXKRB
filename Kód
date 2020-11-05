@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-I = cv2.imread("#kép kockáról")
+I = cv2.imread("#kép kockáról", cv2.IMREAD_GRAYSCALE)
 
 detector = cv2.SimpleBlobDetector_create()
 
